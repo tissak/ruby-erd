@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = "summary"
   s.description = "description"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = Dir["lib/**/*.rb"]
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
