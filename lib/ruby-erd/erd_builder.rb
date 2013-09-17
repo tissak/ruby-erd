@@ -10,6 +10,13 @@ class ERDBuilder
     end
   end
 
+  def add_styled_entity(name)
+    ERDEntity.new.tap do |entity|
+      entity.build(graph: graph, name: name, shape: 'box', style: 'rounded,filled')
+      entity.gradient = {colour: '/blues5/1:/blues5/4', angle: 270 }
+    end
+  end
+
   def associate(entity, other_entity, attributes)
     case other_entity
     when Array

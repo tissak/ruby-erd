@@ -15,11 +15,18 @@ class ERDEntity
     @node.style = :filled
   end
 
+  def gradient=(attributes)
+    @node.fillcolor = attributes[:colour]
+    @node.gradientangle = attributes[:gradientangle]
+  end
+
   def build(attributes)
     @graph = attributes[:graph]
     @name  = attributes[:name]
+    shape = attributes[:shape] || 'record'
+    style = attributes[:style] || 'filled'
     # Returns a GraphViz::Node
-    @node = @graph.add_nodes(name, shape: 'record')
+    @node = @graph.add_nodes(name, shape: shape, style: style)
   end
 
 end
