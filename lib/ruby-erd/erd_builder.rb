@@ -12,8 +12,8 @@ class ERDBuilder
 
   def add_styled_entity(name)
     ERDEntity.new.tap do |entity|
-      entity.build(graph: graph, name: name, shape: 'box', style: 'rounded,filled')
-      entity.gradient = {colour: '/blues5/1:/blues5/4', angle: 270 }
+      entity.build(graph: graph, name: name, style: 'rounded,filled')
+      entity.gradient = {colour: '/blues5/1:/blues5/3', gradientangle: 270 }
     end
   end
 
