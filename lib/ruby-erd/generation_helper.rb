@@ -8,7 +8,7 @@ class ERDBuilder
     entities
   end
 
-  def relationsihp(entity, rel, other_entity, name='joins')
+  def relationship(entity, rel, other_entity, name='joins')
     relationship = directed_relationship(rel)
     self.associate(entity, other_entity, {association: relationship, name: name})
   end
